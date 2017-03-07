@@ -8,6 +8,7 @@ package mach316_dbd_aflevering;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -19,5 +20,5 @@ public interface DBManageable {
     public Connection getConnection() throws Exception;
     public void addProduct();
     public void deleteProduct(String product);
-    public String getAllProducts() throws SQLException;
+    public ArrayList<Component> getAllProducts() throws SQLException;
 }

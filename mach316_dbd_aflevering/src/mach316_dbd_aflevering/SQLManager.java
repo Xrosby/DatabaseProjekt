@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SQLManager implements DBManageable {
 
@@ -49,7 +50,7 @@ public class SQLManager implements DBManageable {
     }
 
     @Override
-    public String getAllProducts() throws SQLException {
+    public ArrayList<Component> getAllProducts() throws SQLException {
         Statement statement = null;
         String query = "SELECT * FROM Component;";
 
@@ -57,18 +58,20 @@ public class SQLManager implements DBManageable {
 
         ResultSet resultSet = statement.executeQuery(query);
 
-        String result = "";
+        ArrayList<Component> components = new ArrayList<>();
 
         while (resultSet.next()) {
             String componentName = resultSet.getString("name");
             String kind = resultSet.getString("kind");
             int price = resultSet.getInt("price");
+            
+            Component component = new Component(componentName, kind, price);
+            components.add(component);
 
-            result += componentName + " : " + kind + " :  " + price + "\n";
-
+            
         }
 
-        return result;
+        return components;
 
     }
 }
