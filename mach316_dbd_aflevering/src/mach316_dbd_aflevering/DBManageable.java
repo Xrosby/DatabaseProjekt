@@ -20,10 +20,4 @@ public interface DBManageable {
     public void addProduct();
     public void deleteProduct(String product);
     public String getAllProducts() throws SQLException;
-    public ArrayList<CPU> getCPUs() throws SQLException;
-    public ArrayList<GPU> getGPUs() throws SQLException;
-    public ArrayList<RAM> getRAM() throws SQLException;
-    public ArrayList<ComputerCase> getCases() throws SQLException;
-    public ArrayList<MainBoard> getMainBoards() throws SQLException;
-    
 }
