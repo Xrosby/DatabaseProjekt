@@ -10,29 +10,115 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mach316_dbd_aflevering.FXMLDocumentController">
     <children>
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <TabPane layoutX="153.0" layoutY="179.0" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Overview">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ListView fx:id="listView" layoutX="235.0" layoutY="137.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="Table Overview">
+            <Tab text="All products">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="tableView" layoutX="175.0" layoutY="72.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableViewComponents" layoutX="175.0" layoutY="72.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
-                            <TableColumn fx:id="kind" prefWidth="75.0" text="Kind" />
-                              <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+                            <TableColumn fx:id="name" prefWidth="199.0" text="Name" />
+                            <TableColumn fx:id="kind" prefWidth="115.0" text="Kind" />
+                              <TableColumn fx:id="price" prefWidth="107.0" text="Price" />
+                              <TableColumn fx:id="stock" prefWidth="118.0" text="Current stock" />
+                              <TableColumn fx:id="toBeOrdered" prefWidth="138.0" text="To be ordered" />
                           </columns>
                         </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="GPU">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewGPUs" layoutX="-71.0" layoutY="97.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="columnGPUname" prefWidth="313.0" text="Name" />
+                            <TableColumn fx:id="columnGPUspeed" minWidth="0.0" prefWidth="176.0" text="Speed" />
+                              <TableColumn fx:id="columnGPUvram" prefWidth="141.0" text="Vram" />
+                              <TableColumn fx:id="columnGPUprice" prefWidth="169.0" text="Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="CPU">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewCPUs" layoutX="93.0" layoutY="65.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="columnCPUname" prefWidth="256.0" text="Name" />
+                            <TableColumn fx:id="columnCPUspeed" prefWidth="115.0" text="Speed" />
+                              <TableColumn fx:id="columnCPUsocket" prefWidth="213.0" text="Socket" />
+                              <TableColumn fx:id="columnCPUprice" minWidth="0.0" prefWidth="215.0" text="Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Mainboard">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewMainboards" layoutX="258.0" layoutY="265.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="columnMainboardname" prefWidth="181.0" text="Name" />
+                              <TableColumn fx:id="columnMainboardhasGraphics" prefWidth="87.0" text="Has graphics" />
+                              <TableColumn fx:id="columnMainboardFormFactor" prefWidth="148.0" text="Form factor " />
+                              <TableColumn fx:id="columnMainboardRAMtype" prefWidth="101.0" text="Ram type" />
+                              <TableColumn fx:id="columnMainboardCPUSocket" prefWidth="146.0" text="CPU Socket" />
+                              <TableColumn fx:id="columnMainboardprice" prefWidth="136.0" text="Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="RAM">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewRAM" layoutX="122.0" layoutY="84.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="columnRAMname" prefWidth="249.0" text="Name" />
+                            <TableColumn fx:id="columnRAMtype" prefWidth="161.0" text="Type" />
+                              <TableColumn fx:id="columnRAMspeed" prefWidth="150.0" text="Speed" />
+                              <TableColumn fx:id="columnRAMsize" prefWidth="112.0" text="Size" />
+                              <TableColumn fx:id="columnRAMprice" prefWidth="127.0" text="Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Case">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewCases" layoutX="96.0" layoutY="84.0" prefHeight="567.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="columnCaseName" prefWidth="299.0" text="Name" />
+                            <TableColumn fx:id="columnCaseFormFactor" prefWidth="296.0" text="Form factor" />
+                              <TableColumn fx:id="columnCasePrice" prefWidth="204.0" text="Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Computer System">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listviewComputerSystems" prefHeight="569.0" prefWidth="298.0" />
+                        <ListView fx:id="listviewComponents" layoutX="450.0" prefHeight="340.0" prefWidth="349.0" />
+                        <Label layoutX="480.0" layoutY="385.0" text="Price" />
+                        <Label fx:id="lblPrice" layoutX="556.0" layoutY="385.0" text=" " />
                      </children>
                   </AnchorPane>
               </content>

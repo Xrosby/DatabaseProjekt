@@ -5,6 +5,7 @@
  */
 package mach316_dbd_aflevering;
 
+import components.Component;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
